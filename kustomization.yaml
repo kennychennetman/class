@@ -1,0 +1,5 @@
+configMapGenerator:
+- name: my-map
+  literals:
+  - keyA=AAAA
+  - keyB=BBB

@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  name: friendlyhello-ingress
+spec:
+  rules:
+  - host: ingress1.example.com
+    http:
+      paths:
+      - backend:
+          serviceName: friendlyhello-service
+          servicePort: 4000
+  - host: ingress2.example.com
+    http:
+      paths:
+      - backend:
+          serviceName: friendlyhello-v3
+          servicePort: 4040

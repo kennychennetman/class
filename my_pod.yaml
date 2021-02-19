@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: friendlyhello-pod
+  labels:
+    app: friendlyhello
+    version: v3
+spec:
+  containers:
+  - name: friendlyhello
+    image: kennychennetman/friendlyhello:v3
+    command: ['python', 'app.py']

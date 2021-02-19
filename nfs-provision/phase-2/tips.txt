@@ -1,0 +1,5 @@
+https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner/issues/25
+
+vi /etc/kubernetes/manifests/kube-apiserver.yaml 
+- --feature-gates=RemoveSelfLink=false
+
