@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: friendlyhello-deployment
+  name: hello-deployment
   labels:
-    app: friendlyhello
+    app: hello
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: friendlyhello
+      app: hello
   template:
     metadata:
       labels:
-        app: friendlyhello
+        app: hello
         run: deployment
     spec:
       containers:
-      - name: friendlyhello
-        image: kennychennetman/friendlyhello:v4
+      - name: hello
+        image: kennychennetman/hello:v4
         command: ['python', 'app.py']
         ports:
         - containerPort: 80

@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: friendlyhello-service
+  name: hello-service
 spec:
   selector:
-    app: friendlyhello
+    app: hello
     run: deployment
   type: LoadBalancer
   ports:

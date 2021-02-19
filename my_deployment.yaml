@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: friendlyhello-deployment
+  name: hello-deployment
   labels:
-    app: friendlyhello
+    app: hello
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: friendlyhello
+      app: hello
   template:
     metadata:
       labels:
-        app: friendlyhello
+        app: hello
         run: deployment
     spec:
       containers:
-      - name: friendlyhello
-        image: kennychennetman/friendlyhello:v5
+      - name: hello
+        image: kennychennetman/hello:v5
         command: ['python', 'app.py']
         ports:
         - containerPort: 80
@@ -25,15 +25,15 @@ spec:
           - name: NAME
             valueFrom:
               configMapKeyRef:
-                name: friendlyhello-env
+                name: hello-env
                 key: NAME
           - name: COLOR
             valueFrom:
               configMapKeyRef:
-                name: friendlyhello-env
+                name: hello-env
                 key: COLOR
           - name: VERSION
             valueFrom:
               configMapKeyRef:
-                name: friendlyhello-env
+                name: hello-env
                 key: VERSION

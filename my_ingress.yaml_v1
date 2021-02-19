@@ -3,12 +3,12 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
-  name: friendlyhello-ingress
+  name: hello-ingress
 spec:
   rules:
   - host: ingress1.example.com
     http:
       paths:
       - backend:
-          serviceName: friendlyhello-service
+          serviceName: hello-service
           servicePort: 4000
